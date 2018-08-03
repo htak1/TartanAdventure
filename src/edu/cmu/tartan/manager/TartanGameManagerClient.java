@@ -224,7 +224,7 @@ public class TartanGameManagerClient implements Runnable, IUserCommand{
 	@Override
 	public boolean updateGameState(String userId, String command) {
 
-		if (connectionState != ConnectionState.STARTED) return false;
+		//if (connectionState != ConnectionState.STARTED) return false;
 		
 		boolean returnValue = false;
 
@@ -248,7 +248,7 @@ public class TartanGameManagerClient implements Runnable, IUserCommand{
 		XmlWriterClient xw = new XmlWriterClient();
 		message = xw.makeXmlForUploadMap(mapFile);
 
-		sendMessage(message.replaceAll("\\n", ""));
+		sendMessage(message);
 
 		waitResponseMessage();
 
